@@ -22,6 +22,7 @@ function playMp3Mild() {
 }
 
 function playRemoteFile() {
+	var media = new Media("http://SERVER_IP:PORT/media/test.mp3");
 	media.setVolume(0.1);
     media.play();
 }
