@@ -3,6 +3,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 	document.querySelector("#playMp3").addEventListener("touchend", playMP3, false);
 	document.querySelector("#playMp3Mild").addEventListener("touchend", playMp3Mild, false);
+	document.querySelector("#playRemoteFile").addEventListener("touchend", playRemoteFile, false);
 	
 };
 
@@ -16,6 +17,11 @@ function playMP3() {
 function playMp3Mild() {
     var mp3URL = getMediaURL("sounds/button-1.mp3");
     var media = new Media(mp3URL, null, mediaError);
+	media.setVolume(0.1);
+    media.play();
+}
+
+function playRemoteFile() {
 	media.setVolume(0.1);
     media.play();
 }
